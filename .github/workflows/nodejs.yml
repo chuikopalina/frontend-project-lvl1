@@ -1,15 +1,23 @@
-name: make lint
-on: push
+name: Brain Games App CI
+
+on:
+  - push
+  - pull_request
+
 jobs:
-  my-job:
+  build:
+
     runs-on: ubuntu-latest
+
     strategy:
-      # Node versions list
       matrix:
-        node-version: [14.x, 16.x]
+        node-version: [12.x]
 
     steps:
-      - name: my-step
-        run: make install
-        run: make lint
-
+    - uses: actions/checkout@v2
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v2
+      with:
+        node-version: ${{ matrix.node-version }}
+    - run: make install
+    - run: make lint
