@@ -9,3 +9,12 @@ publish:
 
 lint: #запуск eslint
 	npx eslint .
+
+brain-even: #запуск игры even
+	node bin/brain-even.js
+
+brain-calc: #запуск игры calc
+	node bin/brain-calc.js
+
+brain-gcd: #запуск игры gcd
+	node bin/brain-gcd.js
