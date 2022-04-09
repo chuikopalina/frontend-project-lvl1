@@ -12,26 +12,26 @@ console.log("What number is missing in the progression?");
 const getProgression = () => {
 	let mistakeDetected = false;
 	let correctResult = 0;
-	let question = '';
+	let question = " ";
 	for (let i = 0; i < 3; i++){
-	let a = randomInteger();
-	let progression = [];
-	let n = getRndInteger(5,10);
-	let lengthProgression = getRndInteger(5,10);
-	progression[0] = n;
-	for (let r = 1; r < lengthProgression; r++){
-		progression[r] =  progression[r-1] + n;
-	}
-	correctResult = progression[a];
-	progression[a] = "..";
-	question = progression;
-	mistakeDetected = myQuest(question,String(correctResult),name);
+		let a = randomInteger();
+		let progression = [];
+		let n = getRndInteger(5,10);
+		let lengthProgression = getRndInteger(5,10);
+		progression[0] = n;
+		for (let r = 1; r < lengthProgression; r++){
+			progression[r] =  progression[r-1] + n;
+		}
+		correctResult = progression[a];
+		progression[a] = "..";
+		question = progression;
+		mistakeDetected = myQuest(question,String(correctResult),name);
 		if (mistakeDetected === true) {
 			break;
+		}
+		if (mistakeDetected === false) {
+			console.log("Congratulations,",name,"!");
+		}
 	}
-	if (mistakeDetected === false) {
-		console.log("Congratulations,",name,"!");
-	}
-}
 };
 getProgression();
