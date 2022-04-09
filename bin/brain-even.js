@@ -1,5 +1,5 @@
-import readlineSync from "readline-sync";
 import {nameQuestion} from "/Users/palinachuiko/frontend-project-lvl1/src/cli.js";
+import {myQuest} from "/Users/palinachuiko/frontend-project-lvl1/src/index.js";
 let name = nameQuestion();
 console.log("Answer 'yes' if the number is even, otherwise answer 'no'.");
 
@@ -8,21 +8,17 @@ const randomInteger = () => {
 };
 
 const evenOrOdd = () => {
+	let mistakeDetected = false;
 	for (let i = 0; i < 3; i++){
 		let number = randomInteger();
-		let respors = number % 2 === 0 ? "yes" : "no";
-		console.log("Question:",number);
-		let userResponse = readlineSync.question("Your answer:");
-		if (respors === userResponse) {
-			console.log("Correct!");
-		}else {
-			console.log("'",userResponse, "' is wrong answer ;(. Correct answer was '",respors,"'.");
-			console.log("Let's try again,",name,"!");
+		let correctResult = number % 2 === 0 ? "yes" : "no";
+		mistakeDetected = myQuest(number,correctResult,name);
+		if (mistakeDetected === true) {
 			break;
 		}
-		if (i === 2) {
-			console.log("Congratulations,",name,"!");
-		}
+	}
+	if (mistakeDetected === false) {
+		console.log("Congratulations,",name,"!");
 	}			
 };
 evenOrOdd();

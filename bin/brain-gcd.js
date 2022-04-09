@@ -8,7 +8,7 @@ console.log("Find the greatest common divisor of given numbers.");
 const gcd = () => {
 	let mistakeDetected = false;
 	let correctResult = 0;
-	let question = '';
+	let question = " ";
 	for (let i = 0; i < 3; i++){
 		let numbers = [randomInteger(),randomInteger()];
 		question = numbers[0] + " " + numbers[1];
@@ -23,10 +23,10 @@ const gcd = () => {
 		mistakeDetected = myQuest(question,String(correctResult),name);
 		if (mistakeDetected === true) {
 			break;
+		}
+		if (mistakeDetected === false) {
+			console.log("Congratulations,",name,"!");
+		}
 	}
-	if (mistakeDetected === false) {
-		console.log("Congratulations,",name,"!");
-	}
-}
 };
 gcd();
