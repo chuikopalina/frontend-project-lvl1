@@ -1,5 +1,5 @@
-import {nameQuestion} from "/Users/palinachuiko/frontend-project-lvl1/src/cli.js";
-import {myQuest} from "/Users/palinachuiko/frontend-project-lvl1/src/index.js";
+import {nameQuestion} from "../src/cli.js";
+import {myQuest} from "../src/index.js";
 let name = nameQuestion();
 //console.log("Answer 'yes' if the number is even, otherwise answer 'no'.");
 

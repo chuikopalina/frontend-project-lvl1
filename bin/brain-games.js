@@ -1,4 +1,4 @@
 #!/usr/bin/env node
 console.log("Welcome to the Brain Games!");
-import {nameQuestion} from "/Users/palinachuiko/frontend-project-lvl1/src/cli.js";
+import {nameQuestion} from "../src/cli.js";
 nameQuestion();
