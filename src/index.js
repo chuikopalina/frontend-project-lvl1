@@ -7,7 +7,7 @@ export const myQuest = (question,correctResult,name) => {
 		console.log("Correct!");
 	}else {
 		console.log("'",userResponse, "' is wrong answer ;(. Correct answer was '",correctResult,"'.");
-		console.log("Let's try again,",name,"!");
+		console.log(`Let's try again, ${name}!`);
 		mistakeDetected = true;
 	}
 	return mistakeDetected;
