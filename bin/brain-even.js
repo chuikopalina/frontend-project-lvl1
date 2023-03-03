@@ -1,3 +1,4 @@
+#!/usr/bin/env node
 import {nameQuestion} from "../src/cli.js";
 import {myQuest} from "../src/index.js";
 let name = nameQuestion();
@@ -19,6 +20,6 @@ const evenOrOdd = () => {
 	}
 	if (mistakeDetected === false) {
 		console.log("Congratulations,",name,"!");
-	}			
+	}
 };
 evenOrOdd();

@@ -1,3 +1,4 @@
+#!/usr/bin/env node
 import {nameQuestion} from "../src/cli.js";
 import {myQuest} from "../src/index.js";
 let name = nameQuestion();
