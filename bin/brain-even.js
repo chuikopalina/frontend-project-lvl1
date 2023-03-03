@@ -2,7 +2,7 @@
 import {nameQuestion} from "../src/cli.js";
 import {myQuest} from "../src/index.js";
 let name = nameQuestion();
-console.log(`Hello,${name}!`);
+console.log("Hello, " + name,"!");
 console.log('Answer "yes" if the number is even, otherwise answer "no".');
 
 const randomInteger = () => {
