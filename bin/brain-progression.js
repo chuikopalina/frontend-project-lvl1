@@ -15,14 +15,16 @@ const getProgression = () => {
 	let correctResult = 0;
 	let question = " ";
 	for (let i = 0; i < 3; i++){
-		let a = randomInteger();
 		let progression = [];
 		let n = getRndInteger(5,10);
 		let lengthProgression = getRndInteger(5,10);
+		let a = getRndInteger(0, lengthProgression - 1);
 		progression[0] = n;
+		console.log(progression[0]);
 		for (let r = 1; r < lengthProgression; r++){
 			progression[r] =  progression[r-1] + n;
 		}
+		console.log(progression);
 		correctResult = progression[a];
 		progression[a] = "..";
 		question = progression.join(' ');
