@@ -25,7 +25,7 @@ const getProgression = () => {
 		}
 		correctResult = progression[a];
 		progression[a] = "..";
-		question = progression;
+		question = progression.join(' ');
 		mistakeDetected = myQuest(question,String(correctResult),name);
 		if (mistakeDetected === true) {
 			break;
