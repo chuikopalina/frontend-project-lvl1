@@ -2,7 +2,7 @@
 import {nameQuestion} from "../src/cli.js";
 import {myQuest} from "../src/index.js";
 let name = nameQuestion();
-
+console.log("Hello, " + name,"!");
 const randomInteger = () => {
 	return Math.floor(Math.random() * 10);
 };
@@ -31,7 +31,7 @@ const getProgression = () => {
 			break;
 		}
 		if (mistakeDetected === false) {
-			console.log("Congratulations,",name,"!");
+			console.log(`Congratulations, ${name}!`);
 		}
 	}
 };

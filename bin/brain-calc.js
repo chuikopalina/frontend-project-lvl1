@@ -35,7 +35,7 @@ const evenOrOdd = () => {
 		}		
 	}	
 	if (mistakeDetected === false) {
-		console.log("Congratulations,",name,"!");
+		console.log(`Congratulations, ${name}!`);
 	}				
 };
 evenOrOdd();
