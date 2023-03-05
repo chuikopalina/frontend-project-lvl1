@@ -6,7 +6,6 @@ console.log("Hello, " + name,"!");
 const randomInteger = () => {
 	return Math.floor(Math.random() * 10);
 };
-
 const getRndInteger = (min, max) => {
 	return Math.floor(Math.random() * (max - min + 1) ) + min;
 };
@@ -19,7 +18,7 @@ const evenOrOdd = () => {
 	for (let i = 0; i < 3; i++){
 		let numbers = [randomInteger(),randomInteger()];
 		let operator = operators[getRndInteger(0,2)];
-		if (operator === "-") {
+		if (operator === "-"){
 			correctResult = numbers[0] - numbers[1];
 			question = `${numbers[0]} - ${numbers[1]}`;
 		}else if (operator === "+") {

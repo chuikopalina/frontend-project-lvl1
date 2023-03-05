@@ -3,9 +3,6 @@ import {nameQuestion} from "../src/cli.js";
 import {myQuest} from "../src/index.js";
 let name = nameQuestion();
 console.log("Hello, " + name,"!");
-const randomInteger = () => {
-	return Math.floor(Math.random() * 10);
-};
 const getRndInteger = (min, max) => {
 	return Math.floor(Math.random() * (max - min + 1) ) + min;
 };

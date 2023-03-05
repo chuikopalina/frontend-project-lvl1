@@ -12,9 +12,6 @@ const primeNumber = () => {
 	let question = " ";
 	let correctResult = " ";
 	let is_prime = true;
-	//if (number <= 1){
-	//err = true;
-	//}
 	for (let i = 0; i < 3; i++){
 		let number = randomInteger();
 		question = number;
