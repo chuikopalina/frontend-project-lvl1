@@ -2,7 +2,6 @@
 import {nameQuestion} from "../src/cli.js";
 import {myQuest} from "../src/index.js";
 let name = nameQuestion();
-//console.log("Answer 'yes' if the number is even, otherwise answer 'no'.");
 
 const randomInteger = () => {
 	return Math.floor(Math.random() * 10);
@@ -22,13 +21,13 @@ const evenOrOdd = () => {
 		let operator = operators[getRndInteger(0,2)];
 		if (operator === "-") {
 			correctResult = numbers[0] - numbers[1];
-			question = numbers[0] + "-" + numbers[1];
+			question = `${numbers[0]} - ${numbers[1]}`;
 		}else if (operator === "+") {
 			correctResult = numbers[0] + numbers[1];
-			question = numbers[0] + "+" + numbers[1];
+			question = `${numbers[0]} + ${numbers[1]}`;
 		}else {
 			correctResult = numbers[0] * numbers[1];
-			question = numbers[0] + "*" + numbers[1];
+			question = `${numbers[0]} * ${numbers[1]}`;
 		}
 		mistakeDetected = myQuest(question,String(correctResult),name);
 		if (mistakeDetected === true) {
