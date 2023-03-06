@@ -1,26 +1,28 @@
 #!/usr/bin/env node
-import {nameQuestion} from "../src/cli.js";
-import {myQuest} from "../src/index.js";
-let name = nameQuestion();
-console.log("Hello, " + name,"!");
+// eslint-disable-next-line import/extensions
+import { nameQuestion } from '../src/cli.js';
+// eslint-disable-next-line import/extensions
+import { myQuest } from '../src/index.js';
+
+const name = nameQuestion();
+console.log(`Hello, ${name}`, '!');
 console.log('Answer "yes" if the number is even, otherwise answer "no".');
 
-const randomInteger = () => {
-	return Math.floor(Math.random() * 100000);
-};
+const randomInteger = () => Math.floor(Math.random() * 100000);
 
 const evenOrOdd = () => {
-	let mistakeDetected = false;
-	for (let i = 0; i < 3; i++){
-		let number = randomInteger();
-		let correctResult = number % 2 === 0 ? "yes" : "no";
-		mistakeDetected = myQuest(number,correctResult,name);
-		if (mistakeDetected === true) {
-			break;
-		}
-	}
-	if (mistakeDetected === false) {
-		console.log(`Congratulations, ${name}!`);
-	}
+  let mistakeDetected = false;
+  // eslint-disable-next-line no-plusplus
+  for (let i = 0; i < 3; i++) {
+    const number = randomInteger();
+    const correctResult = number % 2 === 0 ? 'yes' : 'no';
+    mistakeDetected = myQuest(number, correctResult, name);
+    if (mistakeDetected === true) {
+      break;
+    }
+  }
+  if (mistakeDetected === false) {
+    console.log(`Congratulations, ${name}!`);
+  }
 };
 evenOrOdd();

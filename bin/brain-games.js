@@ -1,5 +1,8 @@
 #!/usr/bin/env node
-//console.log("Welcome to the Brain Games!");
-import {nameQuestion} from "../src/cli.js";
-let name = nameQuestion();
-console.log("Hello, " + name,"!");
+// console.log("Welcome to the Brain Games!");
+// eslint-disable-next-line import/extensions
+import { nameQuestion } from '../src/cli.js';
+
+const name = nameQuestion();
+// eslint-disable-next-line no-console
+console.log(`Hello, ${name}`, '!');
