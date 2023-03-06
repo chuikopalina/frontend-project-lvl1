@@ -21,14 +21,10 @@ const getProgression = () => {
     const lengthProgression = getRndInteger(5, 10);
     const a = getRndInteger(0, lengthProgression - 1);
     progression[0] = n;
-    // eslint-disable-next-line no-console
-    console.log(progression[0]);
     // eslint-disable-next-line no-plusplus
     for (let r = 1; r < lengthProgression; r++) {
       progression[r] = progression[r - 1] + n;
     }
-    // eslint-disable-next-line no-console
-    console.log(progression);
     correctResult = progression[a];
     progression[a] = '..';
     question = progression.join(' ');
