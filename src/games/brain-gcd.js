@@ -1,8 +1,8 @@
 #!/usr/bin/env node
 // eslint-disable-next-line import/extensions
-import { nameQuestion } from '../src/cli.js';
+import { nameQuestion } from './cli.js';
 // eslint-disable-next-line import/extensions
-import { myQuest } from '../src/index.js';
+import { myQuest } from './index.js';
 
 const name = nameQuestion();
 console.log(`Hello, ${name}`, '!');
