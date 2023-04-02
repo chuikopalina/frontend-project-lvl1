@@ -17,7 +17,8 @@
     "url": "https://github.com/chuikopalina/frontend-project-lvl1/issues"
   },
   "bin": {
-	"brain-even": "src/games/brain-even.js",
+	"brain-games": "bin/brain-games.js",
+	"brain-even": "bin/brain-even.js",
 	"brain-calc": "src/games/brain-calc.js",
 	"brain-gcd": "src/games/brain-gcd.js",
 	"brain-progression": "src/games/brain-progression.js",
