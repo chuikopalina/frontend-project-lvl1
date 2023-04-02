@@ -3,5 +3,5 @@ import { nameQuestion } from './index.js';
 
 export const BrainGames = () => {
   const name = nameQuestion();
-  console.log(`Hello,${name}`, '!');
+  console.log(`Hello, ${name}!`);
 };
