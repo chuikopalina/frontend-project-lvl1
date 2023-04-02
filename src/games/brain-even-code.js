@@ -1,6 +1,7 @@
 #!/usr/bin/env node
-import { myQuest, nameQuestion, gameLoop } from './index.js';
+import { myQuest, nameQuestion, gameLoop } from '../index.js';
 
+export const BrainEven = () => {
 const name = nameQuestion();
 console.log(`Hello, ${name}`, '!');
 console.log('Answer "yes" if the number is even, otherwise answer "no".');
@@ -14,3 +15,5 @@ const questResultEvenOrOdd = () => {
 }
 
 gameLoop(questResultEvenOrOdd, name);
+
+};
