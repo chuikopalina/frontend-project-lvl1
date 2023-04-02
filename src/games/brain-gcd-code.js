@@ -1,6 +1,7 @@
 #!/usr/bin/env node
-import { myQuest, nameQuestion, gameLoop } from './index.js';
+import { myQuest, nameQuestion, gameLoop } from '../index.js';
 
+export const BrainGcd = () => {
 const name = nameQuestion();
 console.log(`Hello, ${name}`, '!');
 const randomInteger = () => Math.floor((Math.random() * 100) + 1);
@@ -22,3 +23,5 @@ const questResultGcd = () => {
 }
 
 gameLoop(questResultGcd, name);
+
+};
