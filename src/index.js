@@ -1,10 +1,10 @@
 import readlineSync, { question } from 'readline-sync';
 
 export const nameQuestion = () => {
-	console.log('Welcome to the Brain Games!');
-	const name = readlineSync.question('May I have your name?');
-	return name;
-  };
+  console.log('Welcome to the Brain Games!');
+  const name = readlineSync.question('May I have your name?');
+  return name;
+};
 
 export const myQuest = (question, correctResult, name) => {
   let mistakeDetected = false;
@@ -19,12 +19,12 @@ export const myQuest = (question, correctResult, name) => {
   }
   return mistakeDetected;
 };
- 
+
 export const gameLoop = (questResult, name) => {
   const iteretionsCount = 3;
   let mistakeDetected = false;
   for (let i = 0; i < iteretionsCount; i++) {
-    let a = questResult();
+    const a = questResult();
     mistakeDetected = myQuest(a.question, a.correctResult, name);
     if (mistakeDetected === true) {
       break;
