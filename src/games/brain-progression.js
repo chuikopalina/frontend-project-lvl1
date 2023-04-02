@@ -1,41 +1,25 @@
 #!/usr/bin/env node
-// eslint-disable-next-line import/extensions
-import { nameQuestion } from './cli.js';
-// eslint-disable-next-line import/extensions
-import { myQuest } from './index.js';
+import { myQuest, nameQuestion, gameLoop } from './index.js';
 
 const name = nameQuestion();
-// eslint-disable-next-line no-console
 console.log(`Hello, ${name}`, '!');
+
 const getRndInteger = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min;
-// eslint-disable-next-line no-console
 console.log('What number is missing in the progression?');
-const getProgression = () => {
-  let mistakeDetected = false;
-  let correctResult = 0;
-  let question = ' ';
-  // eslint-disable-next-line no-plusplus
-  for (let i = 0; i < 3; i++) {
-    const progression = [];
-    const n = getRndInteger(5, 10);
-    const lengthProgression = getRndInteger(5, 10);
-    const a = getRndInteger(0, lengthProgression - 1);
-    progression[0] = n;
-    // eslint-disable-next-line no-plusplus
-    for (let r = 1; r < lengthProgression; r++) {
-      progression[r] = progression[r - 1] + n;
-    }
-    correctResult = progression[a];
-    progression[a] = '..';
-    question = progression.join(' ');
-    mistakeDetected = myQuest(question, String(correctResult), name);
-    if (mistakeDetected === true) {
-      break;
-    }
-    if (mistakeDetected === false) {
-      // eslint-disable-next-line no-console
-      console.log(`Congratulations, ${name}!`);
-    }
+
+const questResultProgression = () => {
+  const progression = [];
+  const n = getRndInteger(5, 10);
+  const lengthProgression = getRndInteger(5, 10);
+  const a = getRndInteger(0, lengthProgression - 1);
+  progression[0] = n;
+  for (let r = 1; r < lengthProgression; r++) {
+    progression[r] = progression[r - 1] + n;
   }
+  const correctResult = String(progression[a]);
+  progression[a] = '..';
+  const question = progression.join(' ');
+  return {question, correctResult};
 };
-getProgression();
+
+gameLoop(questResultProgression, name);
