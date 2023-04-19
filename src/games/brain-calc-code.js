@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-import { myQuest, nameQuestion, gameLoop } from '../index.js';
+import { nameQuestion, gameLoop } from '../index.js';
 
 export const BrainCalc = () => {
   const name = nameQuestion();

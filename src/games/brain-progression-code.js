@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-import { myQuest, nameQuestion, gameLoop } from '../index.js';
+import { nameQuestion, gameLoop } from '../index.js';
 
 export const BrainProgression = () => {
   const name = nameQuestion();
@@ -14,7 +14,7 @@ export const BrainProgression = () => {
     const lengthProgression = getRndInteger(5, 10);
     const a = getRndInteger(0, lengthProgression - 1);
     progression[0] = n;
-    for (let r = 1; r < lengthProgression; r++) {
+    for (let r = 1; r < lengthProgression; r += 1) {
       progression[r] = progression[r - 1] + n;
     }
     const correctResult = String(progression[a]);

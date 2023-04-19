@@ -1,4 +1,4 @@
-import readlineSync, { question } from 'readline-sync';
+import readlineSync from 'readline-sync';
 
 export const nameQuestion = () => {
   console.log('Welcome to the Brain Games!');
@@ -23,7 +23,7 @@ export const myQuest = (question, correctResult, name) => {
 export const gameLoop = (questResult, name) => {
   const iteretionsCount = 3;
   let mistakeDetected = false;
-  for (let i = 0; i < iteretionsCount; i++) {
+  for (let i = 0; i < iteretionsCount; i += 1) {
     const a = questResult();
     mistakeDetected = myQuest(a.question, a.correctResult, name);
     if (mistakeDetected === true) {

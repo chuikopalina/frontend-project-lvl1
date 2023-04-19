@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-import { myQuest, nameQuestion, gameLoop } from '../index.js';
+import { nameQuestion, gameLoop } from '../index.js';
 
 export const BrainPrime = () => {
   const name = nameQuestion();
@@ -10,33 +10,33 @@ export const BrainPrime = () => {
   const questResultPrime = () => {
     let question = ' ';
     let correctResult = ' ';
-    let is_prime = true;
+    let isPrime = true;
     const number = randomInteger();
     question = number;
     const sqrt = Math.sqrt(number);
-    if (number === 2 | number === 3) {
+    if (number === 2 || number === 3) {
       correctResult = 'yes';
     } else if (number % 2 === 0 || number % 3 === 0) {
       correctResult = 'no';
     } else {
       for (let i = 5; i <= sqrt; i += 6) {
-		  if (number % i === 0) {
-          is_prime = false;
+        if (number % i === 0) {
+          isPrime = false;
           break;
-		  }
+        }
       }
-      if (is_prime) {
-		  for (let i = 7; i <= sqrt; i += 6) {
+      if (isPrime) {
+        for (let i = 7; i <= sqrt; i += 6) {
           if (number % i === 0) {
-			  is_prime = false;
-			  break;
+            isPrime = false;
+            break;
           }
-		  }
+        }
       }
-      if (is_prime) {
-		  correctResult = 'yes';
+      if (isPrime) {
+        correctResult = 'yes';
       } else {
-		  correctResult = 'no';
+        correctResult = 'no';
       }
     }
     return { question, correctResult };
