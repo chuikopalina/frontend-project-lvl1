@@ -1,7 +1,8 @@
 #!/usr/bin/env node
 import { nameQuestion } from './index.js';
 
-export const BrainGames = () => {
+const BrainGames = () => {
   const name = nameQuestion();
   console.log(`Hello, ${name}!`);
 };
+export default BrainGames;
