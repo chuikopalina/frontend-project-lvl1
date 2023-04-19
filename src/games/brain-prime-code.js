@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 import { nameQuestion, gameLoop } from '../index.js';
 
-export const BrainPrime = () => {
+const BrainPrime = () => {
   const name = nameQuestion();
   console.log(`Hello, ${name}`, '!');
   console.log('Answer "yes" if given number is prime. Otherwise answer "no".');
@@ -44,3 +44,4 @@ export const BrainPrime = () => {
 
   gameLoop(questResultPrime, name);
 };
+export default BrainPrime;

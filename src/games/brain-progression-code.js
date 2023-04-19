@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 import { nameQuestion, gameLoop } from '../index.js';
 
-export const BrainProgression = () => {
+const BrainProgression = () => {
   const name = nameQuestion();
   console.log(`Hello, ${name}`, '!');
 
@@ -25,3 +25,4 @@ export const BrainProgression = () => {
 
   gameLoop(questResultProgression, name);
 };
+export default BrainProgression;
