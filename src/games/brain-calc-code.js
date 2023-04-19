@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 import { nameQuestion, gameLoop } from '../index.js';
 
-export const BrainCalc = () => {
+const BrainCalc = () => {
   const name = nameQuestion();
   console.log(`Hello, ${name}`, '!');
   const randomInteger = () => Math.floor(Math.random() * 10);
@@ -31,3 +31,4 @@ export const BrainCalc = () => {
 
   gameLoop(questResultCalc, name);
 };
+export default BrainCalc;
