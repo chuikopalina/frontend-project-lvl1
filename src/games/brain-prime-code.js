@@ -14,7 +14,9 @@ const BrainPrime = () => {
     const number = randomInteger();
     question = number;
     const sqrt = Math.sqrt(number);
-    if (number === 2 || number === 3) {
+    if (number === 1) {
+      correctResult = 'no';
+    } else if (number === 2 || number === 3) {
       correctResult = 'yes';
     } else if (number % 2 === 0 || number % 3 === 0) {
       correctResult = 'no';
