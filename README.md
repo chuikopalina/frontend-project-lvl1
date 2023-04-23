@@ -23,6 +23,7 @@ Mind Games is a set of five console games. Each game asks questions that need to
 
 Clone the project.
 - Git clone ( https://github.com/chuikopalina/frontend-project-lvl1.git ).
+
 Installing dependencies.
 - make install
 
