@@ -1,34 +1,31 @@
 #!/usr/bin/env node
-import { nameQuestion, gameLoop } from '../index.js';
+import {runGameEngine} from '../index.js';
+import {getRandomInteger, getRndIntegerSegment} from '../utils.js';
 
-const BrainCalc = () => {
-  const name = nameQuestion();
-  console.log(`Hello, ${name}`, '!');
-  const randomInteger = () => Math.floor(Math.random() * 10);
-  function getRndInteger(min, max) {
-    return Math.floor(Math.random() * (max - min + 1)) + min;
-  }
-  console.log('What is the result of the expression?');
-
-  const questResultCalc = () => {
+const runBrainCalc = () => {
+  let task = 'What is the result of the expression?';
+  const getQuestCalc = () => {
     let correctResult = 0;
     let question = ' ';
     const operators = ['-', '*', '+'];
-    const numbers = [randomInteger(), randomInteger()];
-    const operator = operators[getRndInteger(0, 2)];
-    if (operator === '-') {
-      correctResult = numbers[0] - numbers[1];
-      question = `${numbers[0]} - ${numbers[1]}`;
-    } else if (operator === '+') {
-      correctResult = numbers[0] + numbers[1];
-      question = `${numbers[0]} + ${numbers[1]}`;
-    } else {
-      correctResult = numbers[0] * numbers[1];
-      question = `${numbers[0]} * ${numbers[1]}`;
+    const numbers = [getRandomInteger(10, 0), getRandomInteger(10, 0)];
+    const operator = operators[getRndIntegerSegment(0, 2)];
+    switch (operator) {
+      case '-':
+        correctResult = numbers[0] - numbers[1];
+        break;
+      case '+':
+        correctResult = numbers[0] + numbers[1];
+        break;
+      case '*':
+        correctResult = numbers[0] * numbers[1];
+        break;
+        default:
     }
+    question = `${numbers[0]} ${operator} ${numbers[1]}`;
     return { question, correctResult };
   };
 
-  gameLoop(questResultCalc, name);
+  runGameEngine(getQuestCalc, task);
 };
-export default BrainCalc;
+export default runBrainCalc;

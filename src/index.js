@@ -1,12 +1,6 @@
 import readlineSync from 'readline-sync';
 
-const nameQuestion = () => {
-  console.log('Welcome to the Brain Games!');
-  const name = readlineSync.question('May I have your name?');
-  return name;
-};
-
-const myQuest = (question, correctResult, name) => {
+const checkMistakeQuest = (question, correctResult, name) => {
   let mistakeDetected = false;
   console.log('Question:', question);
   const userResponse = (readlineSync.question('Your answer:'));
@@ -20,19 +14,19 @@ const myQuest = (question, correctResult, name) => {
   return mistakeDetected;
 };
 
-const gameLoop = (questResult, name) => {
+const runGameEngine = (questResult, task) => {
   const iteretionsCount = 3;
-  let mistakeDetected = false;
+  console.log('Welcome to the Brain Games!');
+  const name = readlineSync.question('May I have your name?');
+  console.log(`Hello, ${name}`, '!');
+  console.log(task);
   for (let i = 0; i < iteretionsCount; i += 1) {
     const a = questResult();
-    mistakeDetected = myQuest(a.question, a.correctResult, name);
-    if (mistakeDetected === true) {
-      break;
+    if (checkMistakeQuest(a.question, a.correctResult, name)) {
+      return;
     }
   }
-  if (mistakeDetected === false) {
-    console.log(`Congratulations, ${name}!`);
-  }
+  console.log(`Congratulations, ${name}!`);
 };
 
-export { gameLoop, myQuest, nameQuestion };
+export {runGameEngine};

@@ -1,17 +1,14 @@
 #!/usr/bin/env node
-import { nameQuestion, gameLoop } from '../index.js';
+import {runGameEngine} from '../index.js';
+import {getRandomInteger} from '../utils.js';
 
-const BrainPrime = () => {
-  const name = nameQuestion();
-  console.log(`Hello, ${name}`, '!');
-  console.log('Answer "yes" if given number is prime. Otherwise answer "no".');
-  const randomInteger = () => Math.floor(Math.random() * 100);
-
-  const questResultPrime = () => {
+const runBrainPrime = () => {
+  let task = 'Answer "yes" if given number is prime. Otherwise answer "no".';
+  const getQuestPrime = () => {
     let question = ' ';
     let correctResult = ' ';
     let isPrime = true;
-    const number = randomInteger();
+    const number = getRandomInteger(100, 0);
     question = number;
     const sqrt = Math.sqrt(number);
     if (number === 1) {
@@ -44,6 +41,6 @@ const BrainPrime = () => {
     return { question, correctResult };
   };
 
-  gameLoop(questResultPrime, name);
+  runGameEngine(getQuestPrime, task);
 };
-export default BrainPrime;
+export default runBrainPrime;

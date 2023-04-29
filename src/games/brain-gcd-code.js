@@ -1,15 +1,12 @@
 #!/usr/bin/env node
-import { nameQuestion, gameLoop } from '../index.js';
+import {runGameEngine} from '../index.js';
+import {getRandomInteger} from '../utils.js';
 
-const BrainGcd = () => {
-  const name = nameQuestion();
-  console.log(`Hello, ${name}`, '!');
-  const randomInteger = () => Math.floor((Math.random() * 100) + 1);
-  console.log('Find the greatest common divisor of given numbers.');
-
-  const questResultGcd = () => {
+const runBrainGcd = () => {
+  let task = 'Find the greatest common divisor of given numbers.';
+  const getQuestGcd = () => {
     let correctResult = 0;
-    const numbers = [randomInteger(), randomInteger()];
+    const numbers = [getRandomInteger(100, 1), getRandomInteger(100, 1)];
     const question = `${numbers[0]} ${numbers[1]}`;
     let y = numbers[0];
     let x = numbers[1];
@@ -22,6 +19,6 @@ const BrainGcd = () => {
     return { question, correctResult };
   };
 
-  gameLoop(questResultGcd, name);
+  runGameEngine(getQuestGcd, task);
 };
-export default BrainGcd;
+export default runBrainGcd;

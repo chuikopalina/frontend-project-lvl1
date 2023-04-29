@@ -1,18 +1,14 @@
 #!/usr/bin/env node
-import { nameQuestion, gameLoop } from '../index.js';
+import {runGameEngine} from '../index.js';
+import {getRndIntegerSegment} from '../utils.js';
 
-const BrainProgression = () => {
-  const name = nameQuestion();
-  console.log(`Hello, ${name}`, '!');
-
-  const getRndInteger = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min;
-  console.log('What number is missing in the progression?');
-
-  const questResultProgression = () => {
+const runBrainProgression = () => {
+  let task = 'What number is missing in the progression?';
+  const getQuestProgression = () => {
     const progression = [];
-    const n = getRndInteger(5, 10);
-    const lengthProgression = getRndInteger(5, 10);
-    const a = getRndInteger(0, lengthProgression - 1);
+    const n = getRndIntegerSegment(5, 10);
+    const lengthProgression = getRndIntegerSegment(5, 10);
+    const a = getRndIntegerSegment(0, lengthProgression - 1);
     progression[0] = n;
     for (let r = 1; r < lengthProgression; r += 1) {
       progression[r] = progression[r - 1] + n;
@@ -23,6 +19,6 @@ const BrainProgression = () => {
     return { question, correctResult };
   };
 
-  gameLoop(questResultProgression, name);
+  runGameEngine(getQuestProgression, task);
 };
-export default BrainProgression;
+export default runBrainProgression;

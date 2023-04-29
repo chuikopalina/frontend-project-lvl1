@@ -2,7 +2,7 @@
   "name": "@hexlet/code",
   "version": "1.0.0",
   "type": "module",
-  "description": "[![Actions Status](https://github.com/chuikopalina/frontend-project-lvl1/workflows/hexlet-check/badge.svg)](https://github.com/chuikopalina/frontend-project-lvl1/actions)",
+  "description": "Сourse project of Hexlet: Mind Games is a set of five console games. Author: Palina Chuiko [![Actions Status](https://github.com/chuikopalina/frontend-project-lvl1/workflows/hexlet-check/badge.svg)](https://github.com/chuikopalina/frontend-project-lvl1/actions)",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
