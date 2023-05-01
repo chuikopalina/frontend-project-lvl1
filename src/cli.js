@@ -1,8 +1,8 @@
 #!/usr/bin/env node
-import { nameQuestion } from './index.js';
+import readlineSync from 'readline-sync';
 
-const BrainGames = () => {
-  const name = nameQuestion();
-  console.log(`Hello, ${name}!`);
+const runBrainGames = () => {
+  const name = readlineSync.question('May I have your name?');
+  console.log(`Hello, ${name}`, '!');
 };
-export default BrainGames;
+export default runBrainGames;
